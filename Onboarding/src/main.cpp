@@ -1,18 +1,24 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+void activity01_setup();
+void activity01_loop();
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+void setup()
+{
+#ifdef ACTIVITY_01
+  activity01_setup();
+#endif
+#ifdef ACTIVITY_01
+  activity02_setup();
+#endif
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
+#ifdef ACTIVITY_01
+  activity01_loop();
+#endif
+#ifdef ACTIVITY_01
+  activity02_loop();
+#endif
 }
