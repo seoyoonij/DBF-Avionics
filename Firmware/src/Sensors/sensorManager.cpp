@@ -1,12 +1,12 @@
 #include "sensorManager.h"
 
-void Sensors::init()
+void Sensors::initAll()
 {
     imu.begin();
     // add more
 }
 
-void Sensors::update()
+void Sensors::updateAll()
 {
     imu.read(data.accel, data.gyro);
     // add more

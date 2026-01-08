@@ -14,8 +14,8 @@ struct SensorData
 class Sensors
 {
 public:
-    void init();
-    void update();
+    void initAll();
+    void updateAll();
     SensorData getData() const; // return combined readings
 
 private:
