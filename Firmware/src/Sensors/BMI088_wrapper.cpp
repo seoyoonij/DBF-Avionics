@@ -1,4 +1,4 @@
-#include "imu_bmi088.h"
+#include "BMI088_wrapper.h"
 
 IMU_BMI088::IMU_BMI088(SPIClass &spi, uint8_t cs_accel, uint8_t cs_gyro)
     : _spi(spi), _csAccel(cs_accel), _csGyro(cs_gyro), accel(spi, cs_accel), gyro(spi, cs_gyro)

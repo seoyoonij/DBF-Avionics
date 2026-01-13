@@ -1,5 +1,5 @@
 #pragma once
-#include "imu_bmi088.h"
+#include "BMI088_wrapper.h"
 
 struct SensorData
 {

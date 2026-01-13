@@ -14,10 +14,12 @@ public:
     float readTempC();
 
 private:
+    // store pin config within IMU object
     SPIClass &_spi;
     uint8_t _csAccel;
     uint8_t _csGyro;
 
+    // IMU objects
     Bmi088Accel accel;
     Bmi088Gyro gyro;
 };
