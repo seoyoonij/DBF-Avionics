@@ -2,8 +2,9 @@
 ## 9 DoF IMU sensor fusion 
 
 1. Read data from sensors
-    - BMI088: gyro + accel
-    - BMM150: mag
+    - BMI088: gyro + accel ---v
+    - LIS3MDL: mag 
+    - BMP390: barom
 
 2. Synchronize data
     - consider sampling rate of each --> interpolate slower one

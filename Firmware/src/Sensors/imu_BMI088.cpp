@@ -1,4 +1,4 @@
-#include "BMI088_wrapper.h"
+#include "imu_BMI088.h"
 
 IMU_BMI088::IMU_BMI088(SPIClass &spi, uint8_t cs_accel, uint8_t cs_gyro)
     : _spi(spi), _csAccel(cs_accel), _csGyro(cs_gyro), accel(spi, cs_accel), gyro(spi, cs_gyro)
@@ -14,7 +14,7 @@ bool IMU_BMI088::begin()
     return true;
 }
 
-void IMU_BMI088::read(float accelOut[3], float gyroOut[3])
+bool IMU_BMI088::read(float accelOut[3], float gyroOut[3])
 {
     accel.readSensor();
     accelOut[0] = accel.getAccelX_mss();
@@ -25,9 +25,12 @@ void IMU_BMI088::read(float accelOut[3], float gyroOut[3])
     gyroOut[0] = gyro.getGyroX_rads();
     gyroOut[1] = gyro.getGyroY_rads();
     gyroOut[2] = gyro.getGyroZ_rads();
+
+    return true;
 }
 
-float IMU_BMI088::readTempC()
+bool IMU_BMI088::readTempC(float &temp)
 {
-    return accel.getTemperature_C();
+    temp = accel.getTemperature_C();
+    return true;
 }

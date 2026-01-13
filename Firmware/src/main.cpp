@@ -2,7 +2,7 @@
 #include "Sensors/sensorManager.h"
 #include "Sensors/imu_bmi088.h"
 
-Sensors sensors;
+Sensors sensors(SPI, 10, 9); // configure csAccel, csGyro pins
 
 void setup()
 {

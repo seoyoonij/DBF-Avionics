@@ -10,8 +10,8 @@ public:
     IMU_BMI088(SPIClass &spi, uint8_t cs_accel, uint8_t cs_gyro);
 
     bool begin();
-    void read(float accelOut[3], float gyroOut[3]);
-    float readTempC();
+    bool read(float accelOut[3], float gyroOut[3]);
+    bool readTempC(float &temp);
 
 private:
     // store pin config within IMU object
