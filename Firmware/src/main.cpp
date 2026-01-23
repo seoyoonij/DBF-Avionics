@@ -9,9 +9,19 @@ void setup()
     Serial.begin(115200);
 
     sensors.initAll();
+    // rc.init();
+    // actuators.init();
+    // estimator.init();
+    // controller.init();
 }
 
 void loop()
 {
     sensors.updateAll();
+    // rc.update();
+
+    // estimator.update(sensors.data);
+    // controller.update(rc.commands, estimator.state);
+    // mixer.mix(controller.output);
+    // actuators.write(mixer.outputs);
 }

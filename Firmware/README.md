@@ -1,10 +1,9 @@
-# DBF-Avionics
+DBF Avionics
 
-Dependency (one-direction):
-drivers → services → estimation → control → actuators
+Folder Dependency (one-directional):
+    drivers → services → estimation → control → actuators
 
-Firmware Structure:
-
+Firmware Structure: 
     src/
     ├── main.cpp
 
