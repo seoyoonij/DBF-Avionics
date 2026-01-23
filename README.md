@@ -10,7 +10,7 @@ Firmware Structure: \
     src/
     ├── main.cpp
 
-    ├── drivers/           # Hardware-specific
+    ├── drivers/           # Hardware-specific sdf
     │   ├── sensors/
     │   │   ├── imu_bmi088.cpp
     │   │   ├── imu_bmi088.h
