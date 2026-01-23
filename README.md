@@ -1,10 +1,12 @@
 # DBF-Avionics
 
-Dependency (one-direction):
-drivers → services → estimation → control → actuators
+Folder Dependency (one-directional):
+    [ drivers → services → estimation → control → actuators ]
 
-Firmware Structure:
+    - struct-based data, no global variables
+    - keep it modular, readable, logical
 
+Firmware Structure: 
     src/
     ├── main.cpp
 
