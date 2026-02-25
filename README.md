@@ -1,14 +1,14 @@
 # DBF-Avionics
 
-Folder Dependency (one-directional): \
-     drivers → services → estimation → control → actuators \
+Folder Dependency: \
+     [NAV] drivers → services → estimation → [FMU] → control → actuators \
 
     - struct-based data, no global variables
-    - keep it modular, readable, logical
+    - keep it modular and readable
 
-Firmware Structure: \
-    src/
-    ├── main.cpp
+**NAV Firmware:** \
+    src/ \
+    ├── main.cpp \
 
     ├── drivers/           # Hardware-specific
     │   ├── sensors/
@@ -16,6 +16,26 @@ Firmware Structure: \
     │   │   ├── imu_bmi088.h
     │   │   ├── mag_lis3mdl.cpp
     │   │   └── mag_lis3mdl.h
+
+    ├── services/          # Orchestration
+    │   ├── sensor_manager.cpp
+    │   ├── sensor_manager.h
+
+    ├── estimation/        # Algorithm magic
+    │   ├── attitude_estimator.cpp
+    │   ├── attitude_estimator.h
+    │   └── state_estimator.h
+
+    ├── common/
+    │   ├── types.h        # Shared structs
+    │   ├── config.h
+    │   └── math_utils.h
+
+**FMU Firmware:** \
+    src/ \
+    ├── main.cpp \
+
+    ├── drivers/           # Hardware-specific
     │   ├── rc/
     │   │   ├── rc_sbus.cpp
     │   │   └── rc_sbus.h
@@ -24,17 +44,10 @@ Firmware Structure: \
     │       └── pwm_out.h
 
     ├── services/          # Orchestration
-    │   ├── sensor_manager.cpp
-    │   ├── sensor_manager.h
     │   ├── rc_manager.cpp
     │   ├── rc_manager.h
     │   ├── actuator_manager.cpp
     │   └── actuator_manager.h
-
-    ├── estimation/        # Algorithm magic
-    │   ├── attitude_estimator.cpp
-    │   ├── attitude_estimator.h
-    │   └── state_estimator.h
 
     ├── control/           # Control laws
     │   ├── pid.cpp
