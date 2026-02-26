@@ -24,9 +24,15 @@ Folder Dependency: \
     ├── estimation/        # Algorithm magic
     │   ├── attitude_estimator.cpp
     │   ├── attitude_estimator.h
-    │   └── state_estimator.h
+    │   ├── position_estimator.cpp
+    │   ├── position_estimator.h
+    │   ├── ekf.cpp
+    │   └── ekf.h
 
-    ├── common/
+    ├── comm/        # Link with FMU
+    │   ├── nav_link.cpp
+
+    ├── core/
     │   ├── types.h        # Shared structs
     │   ├── config.h
     │   └── math_utils.h
@@ -59,7 +65,10 @@ Folder Dependency: \
     │   ├── mixer.cpp
     │   └── mixer.h
 
-    ├── common/
+    ├── comm/        # Link with NAV
+    │   ├── nav_link.cpp
+
+    ├── core/
     │   ├── types.h        # Shared structs
     │   ├── config.h
     │   └── math_utils.h
